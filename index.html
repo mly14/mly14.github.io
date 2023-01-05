@@ -1,202 +1,28 @@
 <!DOCTYPE html>
-<html ⚡>
-<head>
-    <meta charset="utf-8">
-    <title>Autocomplete</title>
-    <link rel="canonical" href=".">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <meta name="description" content="Search the world's cities.">
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-    <!-- Load AMP web framework -->
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <!-- Load AMP features for introducing interactivity -->
-    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
-    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
-    <!-- Required AMP boilerplate -->
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <!-- Customize the frontend appearance and layout -->
+<html>
+  <head>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="page-container">
+      <h1 class="header">Megan's portfolio page!</h1>
+      <p>This is where I am documenting my work for HCDE 438.</p>
 
-    <!-- How to style images so they show up correctly: https://amp.dev/documentation/examples/style-layout/how_to_support_images_with_unknown_dimensions/?format=websites 
-                                                      : https://www.w3schools.com/howto/howto_css_image_center.asp-->
-    <style amp-custom>
-     .fixed-container {
-        position: relative;
-        width: 500px;
-        height: 500px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      amp-img.contain img {
-        object-fit: contain;
-      }
-    .height-container {
-      position: relative;
-      height: 75px;
-      width: 100%;
-    }
-   .center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 50%;
-      }
-    *{
-      box-sizing: border-box;
-    }
-    *:focus, amp-selector [option][selected] {
-      outline: 0;
-    }
-    main {
-      margin: 4rem auto;
-      max-width: 600px;
-      width: 90%;
-    }
-    form {
-      position: relative;
-    }
-    button {
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      padding: 0;
-      position: absolute;
-      right: 0.75rem;
-      top: 0.75em;
-    }
-    button:focus {
-      outline: 0;
-    }
-    p, input {
-      color: #444;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      font-size: 1.25rem;
-      line-height: 1.5;
-      margin: 0;
-      overflow: hidden;
-      padding: 0.5rem 1rem;
-      text-overflow: ellipsis;
-      user-select: no;
-      white-space: wrap;
-      width: 100%;
-    }
-    h1 {
-      text-align: center;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    }
-
-    #intro {
-      text-align: center;
-    }
-
-    body {
-      background-color: powderblue;
-    }
-  </style>
-</head>
-
-<body>
-<main>
-    <!--
-      amp-form#action-xhr: https://amp.dev/documentation/components/amp-form/#action-xhr
-        action-xhr="random" sets the API endpoint to /random.
-
-      amp-events#form: https://amp.dev/documentation/guides-and-tutorials/learn/amp-actions-and-events/#form
-        on="submit-success: ..." when the random result is returned from the
-          endpoint, assign the global variable s to the result and display
-          the matches list.
-      -->
-    <!--
-      amp-events#input: https://amp.dev/documentation/guides-and-tutorials/learn/amp-actions-and-events/#input-elements
-        on="input-throttled: ..." when typing, assign the global variable s to
-          the value of the textbox and display the matches list.
-
-      amp-bind: https://amp.dev/documentation/components/amp-bind/?format=websites#usage
-        [value]="s || ''" whenever the global variable s changes, update the
-          value of the textbox to reflect the change.
-         -->
-    <h1>Food Finder</h1>
-    <p id="intro">Find a food bank near you!</p>
-    <!-- <br> </br> results in extra line breaks -->
-    <br></br>
-    <img src="https://firebasestorage.googleapis.com/v0/b/polished-core-296600.appspot.com/o/washington.jpg?alt=media&token=1915e849-14a8-4f70-8d40-d7dcfa084d84" 
-      alt="Washington State Map"
-      class="center"
-      style="width:300px;height:250px;">
-     <br></br>
-    <input
-            type="text"
-            name="input"
-            on="input-throttled: matches.changeToLayoutContainer(), AMP.setState({s: event.value}), matches.show"
-            placeholder="Enter a city"
-            [value]="s || ''"
-    >
-    <!--
-      amp-list: https://amp.dev/documentation/components/amp-list/?format=websites#usage
-        layout="nodisplay" this list of matches starts empty, so not displayed.
-
-      amp-bind: https://amp.dev/documentation/components/amp-bind/?format=websites#usage
-        [src]="'query?s=' + (s || '')" whenever the global variable s changes,
-          call the /query endpoint passing the updated value of s.
-      -->
-
-    <amp-list
-            layout="nodisplay"
-            [src]="'query?s=' + (s || '')"
-            id="matches"
-    >
-        <!--
-          amp-mustache: https://amp.dev/documentation/components/amp-mustache/#usage
-            List of matches is displayed according to this template.
-          -->
-        <template type="amp-mustache">
-            <amp-selector
-                keyboard-select-mode="focus"
-                layout="container"
-                on="select: AMP.setState({s: event.targetOption})">
-             <div class="height-container">
-                <p
-                  role="option"
-                  tabindex="0"
-                  option="{{city}}"
-                >
-                {{city}}
-                </p>
-              
-              <p
-                role="option"
-                tabindex="0"
-                option="{{foodBankName}}"
-              >{{foodBankName}}</p>     
-
-                  
-
-            </amp-selector>
-
-            <!-- Image Sizing: https://amp.dev/documentation/examples/style-layout/how_to_support_images_with_unknown_dimensions/?format=websites -->
-          <p>
-                {{name}}
-                {{address}}
-                {{phone}}
-                <a href="{{href}}">{{href}}</a>
-            <div class="fixed-container"> 
-                <amp-img class = "contain"
-                    src="{{image}}"
-                    layout="fill"
-                    noloading  
-                  >
-                </amp-img>
-              </div> 
-              </p>
-            </template>
-          <p placeholder>⋯</p>
-          </div>
-        </amp-list>
-
- </main>
-</body>
+      <h2>projects</h2>
+      <div class="picture-container">
+        <a href="./bio/bio.html">
+          <img
+            class="picture"
+            src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Goblin_illustration_from_19th_century.jpg"
+          />
+        </a>
+        <a href="./recipe/recipe.html">
+          <img
+            class="picture"
+            src="https://picky-palate.com/wp-content/uploads/2010/08/BlueberryOatmealCookie2.jpg"
+          />
+        </a>
+      </div>
+    </div>
+  </body>
 </html>
