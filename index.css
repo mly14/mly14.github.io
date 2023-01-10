@@ -29,18 +29,22 @@ body {
   background-color: #fff9f9;
   font-family: 'Outfit', sans-serif;
   color: rgb(0, 0, 0);
+  margin: auto;
+  max-width: 1200px;
+
 }
 
 .page-container {
-  width: 80%;
-  max-width: 1200px;
   margin-top: 5rem;
-  margin: auto;
   size: 50px;
+  margin: auto;
+  max-width: 1000px;
+
 }
 
 nav {
   padding: 20px 0;
+  max-width: 1200px;
 }
 
 nav .nav-content {
@@ -52,7 +56,7 @@ nav .nav-content {
 }
 nav .logo a {
   font-size: 35px;
-  transition: 3s;
+  transition-duration: 3s;
 }
 
 nav .logo:hover{
