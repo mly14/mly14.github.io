@@ -22,16 +22,14 @@
 a {
   text-decoration: none;
   color: rgb(0, 0, 0);
-
 }
 
 body {
-  background-color: #fff9f9;
+  background-color: #fffbfb;
   font-family: 'Outfit', sans-serif;
   color: rgb(0, 0, 0);
   margin: auto;
   max-width: 1200px;
-
 }
 
 .page-container {
@@ -39,7 +37,6 @@ body {
   size: 50px;
   margin: auto;
   max-width: 1000px;
-
 }
 
 nav {
@@ -56,12 +53,16 @@ nav .nav-content {
 }
 nav .logo a {
   font-size: 35px;
-  transition-duration: 3s;
 }
 
 nav .logo:hover{
-  transform: skew(-20deg);
+  animation: mymove 2s 0.5;
 }
+
+@keyframes mymove {
+  50% {transform: rotate(360deg);}
+}
+
 nav.sticky .logo a {
   color: #fff;
 }
@@ -82,3 +83,12 @@ nav.sticky .logo a {
 .nav-links li a:hover {
   color: #8686A2;
 }
+
+.screen {
+  border: 1px #000000 solid;
+  width: 70%;
+  margin: 20px auto;
+  border-radius: 10px;
+  display: block;
+}
+
