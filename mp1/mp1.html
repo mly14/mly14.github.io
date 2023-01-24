@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-content">
+        <div class="logo">
+          <a href="/index.html">Megan</a>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about/about.html">About</a></li>
+          <li><a href="/cheatsheet/cheatsheet.html">Cheatsheet</a></li>
+          <li><a href="/mp0/mp0.html">MP0</a></li>
+          <li><a href="/mp1/mp1.html">MP1</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="page-container">
+      <h1 class="header">MP1 Writeup</h1>
+      <h2>Overview</h2>
+
+      <p>My idea was to create an extension where you could add sticky notes to a webpage. I thought it would be helpful when reading articles to jot down important points. I based my chrome extension off of the blocker extension example so I started with that code and modified it.&nbsp;</p>
+
+      <p>The code for the extension can be found <a href="https://github.com/mly14/MP1">here</a>. To use it:</p>
+
+      <ol>
+        <li>Download or clone the repo.</li>
+        <li>Go to&nbsp;chrome://extensions.&nbsp;</li>
+        <li>Click load unpacked.&nbsp;</li>
+        <li>Click on the sticky note extension icon.&nbsp;</li>
+        <li>Click the add sticky note button.&nbsp;</li>
+      </ol>
+      <img src="images/mp1.gif" class="screen">
+
+
+      <h2>Development Process</h2>
+
+      <ol>
+        <li>The first thing I did was add a textArea element. This will allow the user to input text. I made it yellow.</li>
+        <img src="images/mp1_1.jpg">
+        <li>I added some styling to the sticky note. I added a shadow to the div by using the box-sahdow CSS property.</li>
+        <img src="images/mp1_2.jpg">
+        <li>I removed the blue border that appears when clicked. I wanted to position the remove and drag buttons to be next to each other instead of on separate lines so I created another div to be able to position them better. </li>
+        <img src="images/mp1_3.jpg">
+        <li>I changed the cursor to be a pointer when hovering over the remove button and a grabber when hovering over the drag button. Added some more styling like changing the font and positiont the buttons better.</li>
+        <img src="images/mp1_4.jpg">
+      </ol>
+
+      <h2>Issue Deep-Dive</h2>
+
+      <p>One problem I encountered was not knowing how to get my sticky note div to stay in the spot where I dragged it to. The original blocker extension positioned the blocks to stay in the same place even when the user scrolled. I wanted my div to move with the page content so that the note would be associated with the same spot since the user would likely want to refer back to the specific part of the page. Upon reviewing the code, I realized that I didn&#39;t need the &quot;blockContainer&quot; div which essentially made a div to cover the entire screen and was the div that I appended the blocks to. Instead, I needed to append my blocks directly to the document body and set the positioning to be absolute which ensured it would not move as I scrolled. Through solving this problem, I learned how to better use the Google Developer console by adjusting the styling right in the browser. This will save time since I don&#39;t have to edit my code in VSCode and go through the process of refreshing.&nbsp;</p>
+
+      <h2>Ideas and Future Work</h2>
+
+      <p>There were some features that I didn&#39;t have time to add/couldn&#39;t figure out:</p>
+
+      <ol>
+        <li>Adding icons to the remove and drag buttons instead of displaying text.</li>
+        <li>Have the sticky note always positioned at the center of the screen. Right now, when a new note is added, it always appears at the top of the page even when scrolled past.&nbsp;</li>
+        <li>Have the text area be focused.&nbsp;</li>
+      </ol>
+
+      <h2>Kudos</h2>
+
+      <p>Kudos to Hannah for helping me figure out the positioning issue! I also found <a href="https://www.w3schools.com/cssref/tryit.php?filename=trycss_cursor">this</a> site to be helpful to refer to when specifying pointer styles</p>
+
+
+      </div>
+    </div>
+  </body>
+</html>
