@@ -110,3 +110,7 @@ nav.sticky .logo a {
 .nav-links li a:hover {
   color: #8686a2;
 }
+
+.screenshot {
+  width: 300px;
+}

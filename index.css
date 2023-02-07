@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
 
 .picture {
-  width: 300px;
+  width: 250px;
   border-radius: 10px;
   cursor: pointer;
   object-fit: cover;
@@ -26,7 +26,7 @@ a {
 
 body {
   background-color: #fffbfb;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   color: rgb(0, 0, 0);
   margin: auto;
   max-width: 1200px;
@@ -55,12 +55,14 @@ nav .logo a {
   font-size: 35px;
 }
 
-nav .logo:hover{
+nav .logo:hover {
   animation: mymove 2s 0.5;
 }
 
 @keyframes mymove {
-  50% {transform: rotate(360deg);}
+  50% {
+    transform: rotate(360deg);
+  }
 }
 
 nav.sticky .logo a {
@@ -81,7 +83,7 @@ nav.sticky .logo a {
 }
 
 .nav-links li a:hover {
-  color: #8686A2;
+  color: #8686a2;
 }
 
 .screen {
@@ -91,5 +93,3 @@ nav.sticky .logo a {
   border-radius: 10px;
   display: block;
 }
-
-
