@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/mp2/mp2.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-content">
+        <div class="logo">
+          <a href="/index.html">Megan</a>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about/about.html">About</a></li>
+          <li><a href="/cheatsheet/cheatsheet.html">Cheatsheet</a></li>
+          <li><a href="/mp0/mp0.html">MP0</a></li>
+          <li><a href="/mp1/mp1.html">MP1</a></li>
+          <li><a href="/mp2/mp2.html">MP2</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="page-container">
+      <h1 class="header">Gallery</h1>
+      <div id="gallery">
+        <a
+          data-content="swirl"
+          style="--color: var(--purple)"
+          href="./sketches/sketch1//sketch1.html">
+          <iframe src="./sketches/sketch1/sketch1.html"></iframe>
+        </a>
+        <a
+          data-content="colorful"
+          style="--color: var(--red)"
+          href="./sketches/sketch2/sketch2.html">
+          <iframe src="./sketches/sketch2/sketch2.html"></iframe>
+        </a>
+        <a
+          data-content="triangles"
+          style="--color: var(--white)"
+          href="./sketches/sketch3/sketch3.html">
+          <iframe src="./sketches/sketch3/sketch3.html"></iframe>
+        </a>
+        <a
+          data-content="paint"
+          style="--color: var(--green)"
+          href="./sketches/sketch4/sketch4.html">
+          <iframe src="./sketches/sketch4/sketch4.html"></iframe>
+        </a>
+        <a
+          data-content="bounce"
+          style="--color: var(--orange)"
+          href="./sketches/sketch5/sketch5.html">
+          <iframe src="./sketches/sketch5/sketch5.html"></iframe>
+        </a>
+        <a
+          data-content="sounds"
+          style="--color: var(--orange)"
+          href="./sketches/sketch6/sketch6.html">
+          <iframe src="./sketches/sketch6/sketch6.html"></iframe>
+        </a>
+      </div>
+      <h1 class="header">MP2 Writeup</h1>
+      <h2>Overview and Usage</h2>
+
+      <p>This project was an exploration of the p5.js Javascript library. This library is great for creating fun visual designs that can be interactive. I created 6 sketches that demonstrate the functionality of this library and compiled them into a gallery.</p>
+
+      <h2>Development Process</h2>
+
+      <p>The development process varied from sketch to sketch. In general, I looked for inspiration from the resources Hannah posted on Github. Once I had an idea, then I would begin executing it, oftentimes borrowing starter code from examples online. I coded all of my sketches using the p5.js web editor then copied them into VSCode. The web editor was really easy to use and convenient. I won&#39;t go in-depth into the process for all my sketches but below is how I created my first sketch.&nbsp;</p>
+
+      <ol>
+        <li>I drew a square.&nbsp;</li>
+        <li>I drew more squares inside of it by using a recursive function. The terminating condition is the number of levels (the number of squares inside).</li>
+        <li>I wanted to make the inside squares rotate. I added the rotate() function but it wasn&rsquo;t performing how I anticipated. The squares were not rotating around the center.&nbsp;</li>
+        <li>After reading an online resource, I realized the rotate function rotates around the origin which is (0,0) by default. I used the translate() function to move the origin to the center of the screen. This fixed my problem and now the squares are correctly rotating inside the main square.</li>
+        <li>I increased the square size, added more levels, and added a black border to make the design pop out.&nbsp;</li>
+        <li>I had to fiddle around with the sizing to make it responsive to the window width and height.</li>
+      </ol>
+
+      <h2>Issue Deep-Dive</h2>
+
+      <p>My first attempt at making the gallery page was to use a CSS grid. I ended up using a different method to display my sketches (iframes) but this was still a problem I encountered. First, I copied the code for a CSS grid from Hannah&#39;s site and was trying to put an image into the div. The image wasn&rsquo;t showing up for some reason. I searched online for answers and came across a StackOverflow post with the same situation. They suggested styling the image width to be 100% I thought this made sense because the image would take the size of the div. However, my problem still persisted. Then I looked more closely at my code and realized padding was applied to the divs. I removed it and the image was able to be displayed. I guess the padding was taking up all the space preventing the image from being displayed. I learned that sometimes you need to review your code and understand it before Googling answers.</p>
+
+      <h2>Ideas and Future Work</h2>
+
+      <ul>
+        <li>I&rsquo;d like to create more sketches and further explore the capabilities of p5.js.&nbsp;</li>
+        <li>I had an idea to make an interactive game that I didn&rsquo;t have enough time to make one.</li>
+        <li>There are some kinds on the gallery page that need to be worked out. I need to fiddle with the sizing of my sketches - right now there are scroll bars on the iframe. The styling on the links need to be fixed.&nbsp;</li>
+      </ul>
+
+      <h2>Kudos</h2>
+
+      <p>For sketch one, <a href="https://genekogan.com/code/p5js-transformations/">this</a>&nbsp;site helped me understand how to make a square rotate around a pivot point.&nbsp;<a href="https://p5js.org/examples/structure-recursion.html">This</a>&nbsp;site helped me understand how to write recursive functions.</p>
+
+      <p>For sketch three, <a href="https://editor.p5js.org/Adri314/sketches/mKqjilMfR">this</a> person&#39;s code helped me understand how to make animations using pop() and push() functions.</p>
+
+      <p>For sketch 4, I used the code from <a href="https://p5js.org/examples/motion-bounce.html">this</a>&nbsp;example and customized it to add color and sound.</p>
+
+      <p>For the gallery, kudos to Hannah for providing helpful resources! The gallery and iframe code was found on her Github.&nbsp;</p>
+      </div>
+    </div>
+  </body>
+</html>

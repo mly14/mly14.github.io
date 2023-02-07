@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
+body {
+  background-color: #fffbfb;
+  font-family: "Outfit", sans-serif;
+  color: rgb(0, 0, 0);
+  margin: auto;
+  max-width: 1200px;
+}
+
+body {
+  margin: 0;
+  padding: 1.5rem;
+  background-color: var(--background);
+  color: var(--foreground);
+  max-width: 1200px;
+}
+
+.page-container {
+  margin-top: 5rem;
+  size: 50px;
+  margin: auto;
+  max-width: 1000px;
+}
+
+#gallery {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+[data-content]:before {
+  content: attr(data-content);
+  position: absolute;
+  bottom: 0;
+  background-color: var(--foreground);
+  text-decoration: none;
+  color: var(--background);
+  font-weight: 600;
+  padding: 0.4rem 0.7rem 0.3rem 0.7rem;
+  border-top-right-radius: 1rem;
+  z-index: 1;
+}
+
+a {
+  text-decoration: none;
+  position: relative;
+  background-color: var(--foreground);
+  outline: 1px solid var(--foreground);
+  outline-offset: -1px;
+  border-radius: 1rem;
+  overflow: hidden;
+  filter: saturate(0);
+  transition: 500ms;
+}
+
+a > iframe {
+  aspect-ratio: 1;
+  border: none;
+  width: 100%;
+  display: block;
+}
+
+a:hover {
+  filter: saturate(1);
+}
+
+nav {
+  padding: 20px 0;
+  max-width: 1200px;
+}
+
+nav .nav-content {
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .logo a {
+  font-size: 35px;
+}
+
+nav .logo:hover {
+  animation: mymove 2s 0.5;
+}
+
+@keyframes mymove {
+  50% {
+    transform: rotate(360deg);
+  }
+}
+
+nav.sticky .logo a {
+  color: #fff;
+}
+
+.nav-content .nav-links {
+  display: flex;
+}
+
+.nav-content .nav-links li {
+  list-style: none;
+  margin: 0 8px;
+}
+
+.nav-links li a {
+  font-size: 18px;
+}
+
+.nav-links li a:hover {
+  color: #8686a2;
+}
