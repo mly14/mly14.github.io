@@ -93,3 +93,7 @@ nav.sticky .logo a {
   border-radius: 10px;
   display: block;
 }
+
+.styled {
+  color: red;
+}
