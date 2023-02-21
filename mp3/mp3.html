@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-content">
+        <div class="logo">
+          <a href="/index.html">Megan</a>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about/about.html">About</a></li>
+          <li><a href="/cheatsheet/cheatsheet.html">Cheatsheet</a></li>
+          <li><a href="/mp0/mp0.html">MP0</a></li>
+          <li><a href="/mp1/mp1.html">MP1</a></li>
+          <li><a href="/mp2/mp2.html">MP2</a></li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <div class="page-container">
+      <h1 class="header">MP3 Writeup</h1>
+      <h2>Overview and Usage</h2>
+
+      <p>This is a game I created using the P5 and P5 sound JS libraries. The game is pretty straightforward with the objective of keeping a ball in the air with a paddle. If the ball hits the ground - it&rsquo;s game over. Each time the ball bounces off the paddle, you earn one point. You can click <a href="https://mly14.github.io/toolchain/">here</a> to play Bounce or you can download the repo <a href="https://github.com/mly14/toolchain">here</a>.</p>
+
+<h2>Development Process</h2>
+<p>This is the development process for Bounce.</p>
+
+<ol>
+	<li>I took a concept from the previous MP2 with the bouncing ball and turned it into a game. I created a circle that would move until it hit the edge and then it would change directions. I created a rectangle that would act as a paddle from which the ball could bounce off.&nbsp;</li>
+  <img src="./images/mp3_1.jpg" class="screenshot">
+	<li>I added a variable to increment the score every time the ball hit the paddle.&nbsp;</li>
+  <img src="./images/score.jpg" class="screenshot">
+	<li>I wanted to add a start screen and an end screen. I took the code from here and modified the styling, and integrated it into my game. To start (and restart) a game, the user can click anywhere in the window.</li>
+  <img src="./images/start-screen.jpg" class="screenshot">
+  <img src="./images/game-over.jpg" class="screenshot">
+	<li>I added some sound effects for when the ball hits something and also a sound for when the game ends using the P5sound library.</li>
+</ol>
+
+<h2>Issue Deep-Dive</h2>
+
+<p>One problem I encountered was adding the bounce sound effect. It would play multiple times and sound distorted. I was confused about why that was. After adding print statements, I realized that the draw() function was being called repeatedly which meant that the sound was also being played continuously. After reading the documentation, I learned that draw() &ldquo;continuously executes the lines of code&rdquo; unless noLoop() is called. I tried adding that but it didn&rsquo;t work because I needed to be listening for user clicks since that was how I would be changing the different screens. My solution ended up being really simple. I used an if statement that defaults to true and plays the sound then sets a variable to false so it would only play once. I reset this variable every time the user restarts the game.&nbsp;</p>
+
+<p>Ideas and Future Work</p>
+
+<ul>
+	<li>I&rsquo;d like to use the P5play library because it has a collide function that can make shapes move more realistically. Right now my game is quite predictable and easy so using this new library will make my project more exciting.&nbsp;</li>
+	<li>Adding an easy, medium, and hard mode could also be interesting. This will involve adding some buttons to the start screen that would change the speed at which the ball moves or the size of the paddle. &nbsp;</li>
+</ul>
+
+<h2>Kudos</h2>
+
+<p>This project is where I learned how to make different screens. Kudos to Hannah for helping me deploy. I was having trouble getting my game to run locally and it turns out I just had to delete a line in my code. I also appreciate Hannah for including the example game repo because I referred to it throughout the development process.</p>
+
+      </div>
+    </div>
+  </body>
+</html>
