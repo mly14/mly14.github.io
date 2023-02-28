@@ -5,21 +5,31 @@
   </head>
   <body>
     <nav>
-      <div class="nav-content">
+      <div class="topnav" id="myTopnav">
         <div class="logo">
-          <a href="/index.html">Megan</a>
+          <a href="/index.html">Megan Ly</a>
         </div>
-
-        <ul class="nav-links">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/about/about.html">About</a></li>
-          <li><a href="/cheatsheet/cheatsheet.html">Cheatsheet</a></li>
-          <li><a href="/mp0/mp0.html">MP0</a></li>
-          <li><a href="/mp1/mp1.html">MP1</a></li>
-          <li><a href="/mp2/mp2.html">MP2</a></li>
-          <li><a href="/mp3/mp3.html">MP3</a></li>
-
+        <ul>
+          <a href="/index.html" class="active">Home</a>
+          <a href="/cheatsheet/cheatsheet.html">Cheatsheet</a>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Projects
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/mp0/mp0.html">MP0</a>
+              <a href="/mp1/mp1.html">MP1</a>
+              <a href="/mp2/mp2.html">MP2</a>
+              <a href="/mp3/mp3.html">MP3</a>
+              <a href="/fp/fp.html">FP0</a>
+            </div>
+          </div>
+          <a href="#about">About</a>
         </ul>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()"
+          >&#9776;</a
+        >
       </div>
     </nav>
 

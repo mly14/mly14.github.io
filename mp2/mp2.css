@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
-body {
+/* body {
   background-color: #fffbfb;
   font-family: "Outfit", sans-serif;
   color: rgb(0, 0, 0);
@@ -20,7 +20,7 @@ body {
   size: 50px;
   margin: auto;
   max-width: 1000px;
-}
+} */
 
 #gallery {
   display: grid;
@@ -64,7 +64,7 @@ a:hover {
   filter: saturate(1);
 }
 
-nav {
+/* nav {
   padding: 20px 0;
   max-width: 1200px;
 }
@@ -110,7 +110,7 @@ nav.sticky .logo a {
 .nav-links li a:hover {
   color: #8686a2;
 }
-
+*/
 .screenshot {
   width: 300px;
 }

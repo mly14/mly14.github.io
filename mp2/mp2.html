@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="/mp2/mp2.css" />
+    <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="mp2.css" />
+
   </head>
   <body>
     <nav>
-      <div class="nav-content">
+      <div class="topnav" id="myTopnav">
         <div class="logo">
-          <a href="/index.html">Megan</a>
+          <a href="/index.html">Megan Ly</a>
         </div>
-
-        <ul class="nav-links">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/about/about.html">About</a></li>
-          <li><a href="/cheatsheet/cheatsheet.html">Cheatsheet</a></li>
-          <li><a href="/mp0/mp0.html">MP0</a></li>
-          <li><a href="/mp1/mp1.html">MP1</a></li>
-          <li><a href="/mp2/mp2.html">MP2</a></li>
-          <li><a href="/mp3/mp3.html">MP3</a></li>
+        <ul>
+          <a href="/index.html" class="active">Home</a>
+          <a href="/cheatsheet/cheatsheet.html">Cheatsheet</a>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Projects
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/mp0/mp0.html">MP0</a>
+              <a href="/mp1/mp1.html">MP1</a>
+              <a href="/mp2/mp2.html">MP2</a>
+              <a href="/mp3/mp3.html">MP3</a>
+              <a href="/fp/fp.html">FP0</a>
+            </div>
+          </div>
+          <a href="#about">About</a>
         </ul>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()"
+          >&#9776;</a
+        >
       </div>
     </nav>
 
@@ -72,7 +85,7 @@
       <p>The development process varied from sketch to sketch. In general, I looked for inspiration from the resources Hannah posted on Github. Once I had an idea, then I would begin executing it, oftentimes borrowing starter code from examples online. I coded all of my sketches using the p5.js web editor then copied them into VSCode. The web editor was really easy to use and convenient. I won&#39;t go in-depth into the process for all my sketches but below is how I created my first sketch.&nbsp;</p>
 
       <ol>
-        <li>I drew a square.&nbsp;</li>
+        <li>I drew a square.</li>
         <img src="./images/sketch1_1.jpg" class="screenshot">
         <li>I drew more squares inside of it by using a recursive function. The terminating condition is the number of levels (the number of squares inside).</li>
         <img src="./images/sketch1_2.jpg" class="screenshot">
