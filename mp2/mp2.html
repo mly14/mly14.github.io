@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="/index.css" />
     <link rel="stylesheet" href="mp2.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="../images/favicon.png" />
 
   </head>
   <body>
@@ -26,10 +27,11 @@
               <a href="/mp2/mp2.html">MP2</a>
               <a href="/mp3/mp3.html">MP3</a>
               <a href="/fp0/fp.html">FP0</a>
-              <a href="/fp1.1/fp.html" class="active">FP1</a>
+              <a href="/fp1.1/fp.html">FP1</a>
+              <a href="/fp1.2/fp1.2.html">FP2</a>
             </div>
           </div>
-          <a href="/about/about.html">About</a>
+          <a href="/about/about.html" class="active">About</a>
         </ul>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()"
           >&#9776;</a
@@ -67,7 +69,8 @@
           data-content="bounce"
           style="--color: var(--orange)"
           href="./sketches/sketch5/sketch5.html">
-          <iframe src="./sketches/sketch5/sketch5.html"></iframe>
+          <!-- <iframe src="./sketches/sketch5/sketch5.html"></iframe> -->
+          <img src="./images/sketch5.gif">
         </a>
         <a
           data-content="sounds"
@@ -87,17 +90,17 @@
 
       <ol>
         <li>I drew a square.</li>
-        <img src="./images/sketch1_1.jpg" class="screenshot">
+        <img src="./images/sketch1_1.jpg" class="screenshot" alt="White square wih black outline on gray background">
         <li>I drew more squares inside of it by using a recursive function. The terminating condition is the number of levels (the number of squares inside).</li>
-        <img src="./images/sketch1_2.jpg" class="screenshot">
+        <img src="./images/sketch1_2.jpg" class="screenshot" alt="Squares of decreasing size slightly rotated each time">
         <li>I wanted to make the inside squares rotate. I added the rotate() function but it wasn&rsquo;t performing how I anticipated. The squares were not rotating around the center.&nbsp;</li>
-        <img src="./images/sketch1_3.jpg" class="screenshot">
+        <img src="./images/sketch1_3.jpg" class="screenshot" alt="Multiple squares nested inside each other">
 
         <li>After reading an online resource, I realized the rotate function rotates around the origin which is (0,0) by default. I used the translate() function to move the origin to the center of the screen. This fixed my problem and now the squares are correctly rotating inside the main square.</li>
-        <img src="./images/sketch1_4.jpg" class="screenshot">
+        <img src="./images/sketch1_4.jpg" class="screenshot" alt="Multiple squares nested inside each other rotated a litle each time">
 
         <li>I increased the square size, added more levels, and added a black border to make the design pop out.&nbsp;</li>
-        <img src="./images/sketch1_5.jpg" class="screenshot">
+        <img src="./images/sketch1_5.jpg" class="screenshot" alt="Lots of squares nested inside each other to create a swirled effect">
 
         <li>I had to fiddle around with the sizing to make it responsive to the window width and height.</li>
       </ol>
@@ -116,11 +119,11 @@
 
       <h2>Kudos</h2>
 
-      <p>For sketch one, <a href="https://genekogan.com/code/p5js-transformations/">this</a>&nbsp;site helped me understand how to make a square rotate around a pivot point.&nbsp;<a href="https://p5js.org/examples/structure-recursion.html">This</a>&nbsp;site helped me understand how to write recursive functions.</p>
+      <p>For sketch one, <a title="P5 transformation example" href="https://genekogan.com/code/p5js-transformations/">this</a>&nbsp;site helped me understand how to make a square rotate around a pivot point.&nbsp;<a href="https://p5js.org/examples/structure-recursion.html">This</a>&nbsp;site helped me understand how to write recursive functions.</p>
 
-      <p>For sketch three, <a href="https://editor.p5js.org/Adri314/sketches/mKqjilMfR">this</a> person&#39;s code helped me understand how to make animations using pop() and push() functions.</p>
+      <p>For sketch three, <a title="P5 example" href="https://editor.p5js.org/Adri314/sketches/mKqjilMfR">this</a> person&#39;s code helped me understand how to make animations using pop() and push() functions.</p>
 
-      <p>For sketch 4, I used the code from <a href="https://p5js.org/examples/motion-bounce.html">this</a>&nbsp;example and customized it to add color and sound.</p>
+      <p>For sketch 4, I used the code from <a title="Official p5 example" href="https://p5js.org/examples/motion-bounce.html">this</a>&nbsp;example and customized it to add color and sound.</p>
 
       <p>For the gallery, kudos to Hannah for providing helpful resources! The gallery and iframe code was found on her Github.&nbsp;</p>
       </div>

@@ -57,7 +57,6 @@ a > iframe {
   aspect-ratio: 1;
   border: none;
   width: 100%;
-  display: block;
 }
 
 a:hover {

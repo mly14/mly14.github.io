@@ -3,6 +3,8 @@
   <head>
     <link rel="stylesheet" href="/index.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="../images/favicon.png" />
+
   </head>
   <body>
     <nav>
@@ -24,10 +26,11 @@
               <a href="/mp2/mp2.html">MP2</a>
               <a href="/mp3/mp3.html">MP3</a>
               <a href="/fp0/fp.html">FP0</a>
-              <a href="/fp1.1/fp.html" class="active">FP1</a>
+              <a href="/fp1.1/fp.html">FP1</a>
+              <a href="/fp1.2/fp1.2.html">FP2</a>
             </div>
           </div>
-          <a href="/about/about.html">About</a>
+          <a href="/about/about.html" class="active">About</a>
         </ul>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()"
           >&#9776;</a
@@ -38,19 +41,19 @@
       <h1 class="header">MP3 Writeup</h1>
       <h2>Overview and Usage</h2>
 
-      <p>This is a game I created using the P5 and P5 sound JS libraries. The game is pretty straightforward with the objective of keeping a ball in the air with a paddle. If the ball hits the ground - it&rsquo;s game over. Each time the ball bounces off the paddle, you earn one point. You can click <a href="https://mly14.github.io/toolchain/" class="styled">here</a> to play Bounce or you can download the repo <a href="https://github.com/mly14/toolchain" class="styled">here</a>.</p>
+      <p>This is a game I created using the P5 and P5 sound JS libraries. The game is pretty straightforward with the objective of keeping a ball in the air with a paddle. If the ball hits the ground - it&rsquo;s game over. Each time the ball bounces off the paddle, you earn one point. You can click <a title="Bounce game" href="https://mly14.github.io/toolchain/" class="styled">here</a> to play Bounce or you can download the repo <a title="Bounce game repo" href="https://github.com/mly14/toolchain" class="styled">here</a>.</p>
 
 <h2>Development Process</h2>
 <p>This is the development process for Bounce.</p>
 
 <ol>
 	<li>I took a concept from the previous MP2 with the bouncing ball and turned it into a game. I created a circle that would move until it hit the edge and then it would change directions. I created a rectangle that would act as a paddle from which the ball could bounce off.&nbsp;</li>
-  <img src="./images/mp3_1.jpg" class="screenshot">
+  <img src="./images/mp3_1.jpg" class="screenshot" alt="Screenshot of pong game">
 	<li>I added a variable to increment the score every time the ball hit the paddle.&nbsp;</li>
-  <img src="./images/score.jpg" class="screenshot">
+  <img src="./images/score.jpg" class="screenshot"alt="Pong game with score tracker" >
 	<li>I wanted to add a start screen and an end screen. I took the code from here and modified the styling, and integrated it into my game. To start (and restart) a game, the user can click anywhere in the window.</li>
-  <img src="./images/start-screen.jpg" class="screenshot">
-  <img src="./images/game-over.jpg" class="screenshot">
+  <img src="./images/start-screen.jpg" class="screenshot" alt="Game start screen">
+  <img src="./images/game-over.jpg" class="screenshot" alt="Game over screen">
 	<li>I added some sound effects for when the ball hits something and also a sound for when the game ends using the P5sound library.</li>
 </ol>
 

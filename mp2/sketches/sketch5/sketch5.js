@@ -9,14 +9,32 @@ let ydirection = 1; // Top to Bottom
 
 let color = "#e29578";
 
+function fixedCanvas(width, height) {
+  resizeCanvas(width, height);
+  const style = canvas.style;
+  const amt = "90%";
+  if (innerWidth / innerHeight > width / height) {
+    style.width = "auto";
+    style.height = amt;
+  } else {
+    style.height = "auto";
+    style.width = amt;
+  }
+  style.top = style.left = style.bottom = style.right = "0";
+  style.position = "absolute";
+  style.margin = "auto";
+}
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  fixedCanvas(800, 800);
+
   noStroke();
   frameRate(40);
   ellipseMode(RADIUS);
   // Set the starting position of the shape
-  xpos = random(0, windowWidth);
-  ypos = random(0, windowHeight);
+  xpos = random(0, width);
+  ypos = random(0, height);
   // Setup a synth with ToneJS
   synth = new Tone.Synth({
     oscillator: {
@@ -35,20 +53,20 @@ function windowResized() {
 
 function draw() {
   background(color);
-  xspeed = windowWidth / 90;
-  yspeed = windowHeight / 90;
+  xspeed = 5;
+  yspeed = 6;
   // Update the position of the shape
   xpos = xpos + xspeed * xdirection;
   ypos = ypos + yspeed * ydirection;
-  rad = windowHeight / 10;
+  rad = height / 10;
   // Test to see if the shape exceeds the boundaries of the screen
   // If it does, reverse its direction by multiplying by -1
-  if (xpos > windowWidth - rad || xpos < rad) {
+  if (xpos > width - rad || xpos < rad) {
     xdirection *= -1;
     playNote();
     changeColor();
   }
-  if (ypos > windowHeight - rad || ypos < rad) {
+  if (ypos > height - rad || ypos < rad) {
     ydirection *= -1;
     playNote();
     changeColor();

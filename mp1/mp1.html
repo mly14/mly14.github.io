@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" href="/index.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="../images/favicon.png" />
   </head>
   <body>
     <nav>
@@ -24,10 +25,11 @@
               <a href="/mp2/mp2.html">MP2</a>
               <a href="/mp3/mp3.html">MP3</a>
               <a href="/fp0/fp.html">FP0</a>
-              <a href="/fp1.1/fp.html" class="active">FP1</a>
+              <a href="/fp1.1/fp.html">FP1</a>
+              <a href="/fp1.2/fp1.2.html">FP2</a>
             </div>
           </div>
-          <a href="/about/about.html">About</a>
+          <a href="/about/about.html" class="active">About</a>
         </ul>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()"
           >&#9776;</a
@@ -40,7 +42,7 @@
 
       <p>My idea was to create an extension where you could add sticky notes to a webpage. I thought it would be helpful when reading articles to jot down important points. I based my chrome extension off of the blocker extension example so I started with that code and modified it.&nbsp;</p>
 
-      <p>The code for the extension can be found <a href="https://github.com/mly14/MP1">here</a>. To use it:</p>
+      <p>The code for the extension can be found <a title="Repo for the extension" href="https://github.com/mly14/MP1">here</a>. To use it:</p>
 
       <ol>
         <li>Download or clone the repo.</li>
@@ -49,20 +51,20 @@
         <li>Click on the sticky note extension icon.&nbsp;</li>
         <li>Click the add sticky note button.&nbsp;</li>
       </ol>
-      <img src="images/mp1.gif" class="screen">
+      <img src="images/mp1.gif" class="screenshot" alt="Gif of using the sticky note extension">
 
 
       <h2>Development Process</h2>
 
       <ol>
         <li>The first thing I did was add a textArea element. This will allow the user to input text. I made it yellow.</li>
-        <img src="images/mp1_1.jpg">
-        <li>I added some styling to the sticky note. I added a shadow to the div by using the box-sahdow CSS property.</li>
-        <img src="images/mp1_2.jpg">
+        <img src="images/mp1_1.jpg" alt="Screenshot of extension">
+        <li>I added some styling to the sticky note. I added a shadow to the div by using the box-shadow CSS property.</li>
+        <img src="images/mp1_2.jpg" alt="Screenshot of sticky note with a shadow effect">
         <li>I removed the blue border that appears when clicked. I wanted to position the remove and drag buttons to be next to each other instead of on separate lines so I created another div to be able to position them better. </li>
-        <img src="images/mp1_3.jpg">
+        <img src="images/mp1_3.jpg" alt="Screenshot of sticky note without blue outline">
         <li>I changed the cursor to be a pointer when hovering over the remove button and a grabber when hovering over the drag button. Added some more styling like changing the font and positiont the buttons better.</li>
-        <img src="images/mp1_4.jpg">
+        <img src="images/mp1_4.jpg" alt="Screenshot of final sticky note with new font style and improved button placement">
       </ol>
 
       <h2>Issue Deep-Dive</h2>
@@ -81,7 +83,7 @@
 
       <h2>Kudos</h2>
 
-      <p>Kudos to Hannah for helping me figure out the positioning issue! I also found <a href="https://www.w3schools.com/cssref/tryit.php?filename=trycss_cursor">this</a> site to be helpful to refer to when specifying pointer styles</p>
+      <p>Kudos to Hannah for helping me figure out the positioning issue! I also found <a title="W3Schools cursor examples" href="https://www.w3schools.com/cssref/tryit.php?filename=trycss_cursor">this</a> site to be helpful to refer to when specifying pointer styles</p>
 
 
       </div>
