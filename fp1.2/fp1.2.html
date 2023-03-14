@@ -47,73 +47,83 @@
         My final project is a game using the p5 js library. My game can be
         played <a href="https://mly14.github.io/levels-final/">here</a>.
       </p>
-      <img src="images/game.gif" />
+      <img alt="Gif of Levels game in action" src="images/final_gif.gif" />
       <h2>Development Process</h2>
       <ol>
         <li>
-          I began with just the ball and a single rising platform. This was an
-          idea I found from the examples on the p5 play website.
+          My MVP already had the main functionality of the game and the
+          leaderboard database connection. The next thing I added was formatting
+          the data in a more appealing way. In my final version, the data is
+          displayed only on the game over page. I also revised the styling to
+          vary the font size and font type by importing Google fonts.
         </li>
-        <img src="images/1.jpg" />
-
-        <li>I added rising squares that would be turned into platforms.</li>
-        <img src="images/2.jpg" />
-
-        <li>
-          I changed the shape of the squares into skinny rectangles to look more
-          like a platform.
-        </li>
-        <img src="images/3.jpg" class="screenshot" />
+        <img
+          alt="Game over screen with username input field and top scores leaderboard"
+          src="images/game_over.png"
+          class="screenshot"
+        />
 
         <li>
-          I added a counter to keep track of the score and a face for the ball.
-          I also added a stretch effect so the ball will be animated when
-          moving.
+          I changed the button styles by rounding the corners and positioned it
+          to be in the middle of the canvas.
         </li>
-        <img src="images/4.png" class="screenshot" />
+        <img
+          alt="Game start screen"
+          src="images/start_screen.png"
+          class="screenshot"
+        />
 
-        <li>I added a start and end screen with buttons.&nbsp;</li>
-        <img src="images/startscreen.png" class="screenshot" />
         <li>
-          I created a Firebase database to store high scores. I hooked it up to
-          my game to show the contents of the database to the player
+          I randomized the width of the platforms to make the game more
+          interesting.
         </li>
+        <img
+          alt="Levels game with varying sizes of platforms"
+          src="images/game_on.png"
+          class="screenshot"
+        />
       </ol>
 
       <h2>Issue Deep-Dive</h2>
 
       <p>
-        I make a file called sketch.js which contained code for my game. I also
-        had another js file called index.js with some functions that connect to
-        my Firebase backend. I didn&#39;t know how to send information like the
-        score which is in my sketch.js file to my index.js file which contained
-        the functions I needed to send data into my database. I went to
-        Hannah&#39;s office hours and she helped me resolve this problem by
-        attaching certain functions in my index.js file to the window. This made
-        them accessible from my sketch.js so I was able to connect my game data
-        to my database.&nbsp;
+        I had a lot of difficulty positioning the button and text input
+        elements. I wanted them to be inside the canvas but it seemed like they
+        were separate elements. I tried using the .parent() function to attach
+        them to a div. This didn't work because the button would be positioned
+        next to the canvas when I wanted it to be in the center. I spent a lot
+        of time Googling. Eventually, I realized the elements were created in
+        the DOM so that was messing with positioning. I looked into how to
+        position two elements on top of each other. I found
+        <a
+          href="https://stackoverflow.com/questions/6780614/css-how-to-position-two-elements-on-top-of-each-other-without-specifying-a-hei"
+          >this</a
+        >
+        Stackoverflow post that suggested changing the use relative and absolute
+        positioning. After fiddling around in the Developer Tools panel with the
+        styles, I finally got it to work.
       </p>
 
       <h2>Ideas and Future Work</h2>
-
       <ul>
         <li>
-          I need to debug my code, sometimes the game will just freeze and
-          I&#39;m not sure what the problem is.&nbsp;
+          This was the same goal from my MVP. The counter right now is just
+          measuring the number of platforms that have appeared, I want to change
+          it to measure the time.
         </li>
         <li>
-          The counter right now is just measuring the number of platforms that
-          have appeared, I want to change it to measure the time.&nbsp;
+          I achieved my goal of varying the widths of the platforms but didn't
+          implement the increasing speed function.
         </li>
-        <li>
-          The game is pretty straightforward. I want to make it harder by
-          increasing the speed and vary the size of the platforms.&nbsp;
-        </li>
+        <li>I'd like to add some music and sound effects.</li>
       </ul>
 
       <h2>Kudos</h2>
       <ul>
-        <li>Kudos to Hannah for helping me with deploying.</li>
+        <li>
+          Kudos to Hannah for helping me getting the database data to render
+          correctly.
+        </li>
       </ul>
     </div>
   </body>

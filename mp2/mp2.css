@@ -63,6 +63,11 @@ a:hover {
   filter: saturate(1);
 }
 
+img {
+  height: 100%;
+  width: 100%;
+}
+
 /* nav {
   padding: 20px 0;
   max-width: 1200px;

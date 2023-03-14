@@ -64,6 +64,7 @@ body {
   font-size: 20px;
   color: rgb(0, 0, 0);
   margin: auto;
+  padding: 2%;
   /* max-width: 1100px; */
 }
 
@@ -237,7 +238,7 @@ nav .topnav .logo:hover {
 
 .screenshot {
   border: 1px #000000 solid;
-  width: 60%;
+  width: 50%;
   margin: 20px auto;
   border-radius: 10px;
   display: block;
